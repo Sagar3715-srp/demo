@@ -9,12 +9,13 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="registration.css">
+    
+
+    <link rel="stylesheet" href="reg.css">
 </head>
-<body> 
-        <div class="container">
-            <img src="image123.jpg" alt="000">
-            <div class="row p-5 bg-warning">
+<body>
+        <div class="container mybg"> 
+            <div class="row p-5">
                 <div class="col-md-6 p-5">
                         <form action="insert.php" method="POST" enctype="multipart/form-data">
                             Fullname: 
@@ -38,8 +39,8 @@
                                 <option value="23">AI&DS</option>
                             </select>
                             <br>
-
-                            <input type="file" name="fileToUpload" class="form-control" >
+                            <br>
+                            <input type="file" name="fileToUpload" class="form-control" ><br>
 
                             <input type="submit" class="btn btn-success" name="submit">
                         </form>
@@ -55,6 +56,6 @@
                     <input type="submit">
                 </form>
             </div>
-        </div>
+        </div>    
 </body>
 </html>

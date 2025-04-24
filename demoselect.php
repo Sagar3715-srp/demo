@@ -12,43 +12,42 @@
      <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     
-    <div class="container">
-        <div class="row">
-               
-        <?php
-            include("connection.php");
-            $myQuery = "SELECT * FROM student";
-            $result = $conn->query($myQuery);
-            if( $result->num_rows > 0)
-            {
-                while($row = $result->fetch_assoc())
+    <div class="pamp"> 
+        <div class="container-fluid">
+            <div class="row">
+            <?php
+                include("connection.php");
+                $myQuery = "SELECT * FROM student";
+                $result = $conn->query($myQuery);
+                if( $result->num_rows > 0)
                 {
-                    $fn = $row["fullname"];
-                    $se = $row["semail"];
-                    $cn = $row["contact"];
-                    $pw = $row["password"];
-                    $ph = $row["photo"];
-                    echo '
-                   <div class="col-md-3 p-3">
-                    <div class="myCard">
-                        <img src="uploads/'.$ph.'" class="img-fluid" alt="">
-                        <h3>'.$fn.'</h3>
-                        <p>'.$se.'</p>
-                        <p>'.$cn.'</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                    ';
+                    while($row = $result->fetch_assoc())
+                    {
+                        $fn = $row["fullname"];
+                        $se = $row["semail"];
+                        $cn = $row["contact"];
+                        $pw = $row["password"];
+                        $ph = $row["photo"];
+                        echo '   
+                        <div class="col-md-3 p-3">
+                            <div class="myCard">
+                                <img src="uploads/'.$ph.'" class="img-fluid" alt="">
+                                <h3>'.$fn.'</h3>
+                                <p>'.$se.'</p>
+                                <p>'.$cn.'</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                            ';
+                        }
                 }
+                else
+                {
+                    echo "Not found";
+                }
+            ?>
                 
-            }
-            else
-            {
-                echo "Not found";
-            }
-        ?>
-            
+            </div>
         </div>
     </div>
 </body>
